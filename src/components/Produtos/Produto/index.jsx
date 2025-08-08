@@ -9,6 +9,9 @@ const Produto = ({
   titulo,
   descricao,
   preco,
+  promocao,
+  precoOriginal,
+  novo,
   adicionarProduto,
 }) => {
   return (
@@ -16,9 +19,26 @@ const Produto = ({
       <div className="card">
         <img className="img-fluid" src={src} alt={alt} />
         <div className="card-body">
-          <h5 className="card-title fw-bold">{titulo}</h5>
+          <h5 className="card-title fw-bold">
+            {titulo}
+            {novo && (
+              <span className="badge text-bg-success ms-2">Novo</span>
+            )}
+            {promocao && (
+              <span className="badge text-bg-danger ms-2">Promoção</span>
+            )}
+          </h5>
           <p className="card-text">{descricao}</p>
-          <p className="fw-bold">{formatadorMoeda(preco)}</p>
+          {promocao ? (
+            <p className="fw-bold">
+              <span className="text-decoration-line-through me-2">
+                {formatadorMoeda(precoOriginal)}
+              </span>
+              {formatadorMoeda(preco)}
+            </p>
+          ) : (
+            <p className="fw-bold">{formatadorMoeda(preco)}</p>
+          )}
 
           <Botao
             variant="primary"
