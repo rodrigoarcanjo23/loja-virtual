@@ -1,0 +1,20 @@
+[
+  {
+    "id": 1,
+    "nome": "Loja Centro",
+    "endereco": "Rua Principal, 123 - Centro, São Paulo",
+    "imagem": "https://via.placeholder.com/300x200"
+  },
+  {
+    "id": 2,
+    "nome": "Loja Shopping",
+    "endereco": "Avenida das Compras, 456 - Loja 45, Rio de Janeiro",
+    "imagem": "https://via.placeholder.com/300x200"
+  },
+  {
+    "id": 3,
+    "nome": "Loja Praia",
+    "endereco": "Orla Marítima, 789 - Loja 10, Salvador",
+    "imagem": "https://via.placeholder.com/300x200"
+  }
+]
