@@ -9,6 +9,7 @@ const Produto = ({
   titulo,
   descricao,
   preco,
+  novo,
   adicionarProduto,
 }) => {
   return (
@@ -16,6 +17,9 @@ const Produto = ({
       <div className="card">
         <img className="img-fluid" src={src} alt={alt} />
         <div className="card-body">
+          {novo && (
+            <span className="badge text-bg-success mb-2">Novo</span>
+          )}
           <h5 className="card-title fw-bold">{titulo}</h5>
           <p className="card-text">{descricao}</p>
           <p className="fw-bold">{formatadorMoeda(preco)}</p>
