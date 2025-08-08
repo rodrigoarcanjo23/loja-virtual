@@ -8,8 +8,8 @@ export const carrinhoReducer = (state, action) => {
             const novoProduto = action.payload
             const produto = state.findIndex((item) => item.id === novoProduto.id);
             if (produto === -1) {
-                novoProduto.quantidade = 1;
-                return [...state, novoProduto];
+                const produtoComQuantidade = { ...novoProduto, quantidade: 1 };
+                return [...state, produtoComQuantidade];
             } else {
                 return state.map((item, index) =>
                     index === produto
