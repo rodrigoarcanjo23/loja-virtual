@@ -1,10 +1,30 @@
-import React from "react";
+import React, { useContext } from "react";
 import Botao from "@/components/Botao";
 import ResumoCompra from "./ResumoCompra";
 import { useNavigate } from "react-router-dom";
+import { AuthContext } from "@/context/AuthContext";
+import { useCarrinhoContext } from "@/hooks/useCarrinhoContext";
 
 const Sumario = () => {
   const navigate = useNavigate();
+  const { token } = useContext(AuthContext);
+  const { carrinho } = useCarrinhoContext();
+
+  const finalizar = async () => {
+    if (!token) {
+      navigate('/login');
+      return;
+    }
+    await fetch('/api/pedidos', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+        Authorization: `Bearer ${token}`,
+      },
+      body: JSON.stringify({ itens: carrinho }),
+    });
+    navigate('/');
+  };
 
   return (
     <div className="d-flex flex-column gap-3 sumario">
@@ -21,6 +41,7 @@ const Sumario = () => {
           variant="primary"
           className="border-0"
           aria-label="Finalizar compra"
+          onClick={finalizar}
         >
           Finalizar compra
         </Botao>
