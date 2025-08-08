@@ -8,7 +8,7 @@ const ListaProdutosCarrinho = ({ carrinho }) => {
   return (
     <ul className="list-unstyled">
       {carrinho.length === 0 ? (
-        <p className="text-center my-5">Não há produtos no carrinho</p>
+        <li className="text-center my-5">Não há produtos no carrinho</li>
       ) : (
         carrinho.map((itemCarrinho) => {
           return location.pathname === "/carrinho" ? (
