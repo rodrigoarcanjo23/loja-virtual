@@ -4,7 +4,7 @@ const Botao = ({
   type,
   children,
   variant = "default",
-  className,
+  className = "",
   handleClick,
   ...rest
 }) => {
