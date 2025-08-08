@@ -17,7 +17,7 @@ const Home = () => {
       <main>
         <Carrossel />
         <Categorias />
-        <Produtos/>
+        <Produtos titulo="Produtos que estão bombando!" filtro={() => true} />
         <Facilidades />
         <Novidades />
       </main>
