@@ -13,7 +13,7 @@ const Sumario = () => {
         <Botao
           variant="tertiary"
           aria-label="Continuar comprando"
-          onClick={() => navigate("/")}
+          handleClick={() => navigate("/")}
         >
           Continuar comprando
         </Botao>
