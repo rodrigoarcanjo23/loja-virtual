@@ -12,7 +12,7 @@ const TotalCarrinho = ({ valorTotalCarrinho }) => {
         <p className="verde-limao m-0">Total</p>
         <ValorFormatado valor={valorTotalCarrinho} />
       </div>
-      <div className="d-flex flex-column flex-md-row gap-2 mx-1 mx-lg-0 justify-content-between justify-content-md-evelyn">
+      <div className="d-flex flex-column flex-md-row gap-2 mx-1 mx-lg-0 justify-content-between justify-content-md-evenly">
         <Botao
           onClick={() => navigate("/carrinho")}
           variant="primary"
