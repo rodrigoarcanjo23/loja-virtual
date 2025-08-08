@@ -14,7 +14,7 @@ const TotalCarrinho = ({ valorTotalCarrinho }) => {
       </div>
       <div className="d-flex flex-column flex-md-row gap-2 mx-1 mx-lg-0 justify-content-between justify-content-md-evelyn">
         <Botao
-          onClick={() => navigate("/carrinho")}
+          handleClick={() => navigate("/carrinho")}
           variant="primary"
           className="border-0 w-100"
         >
